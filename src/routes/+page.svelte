@@ -4,7 +4,29 @@
   import IconHamburger from '../ui/icons/icon-hamburger.svelte';
   import Logo from '../ui/logo.svelte';
   import ServiceBlock from '../ui/service-block.svelte';
+  import Testimonial from '../ui/testimonial.svelte';
   import UspBlock from '../ui/usp-block.svelte';
+
+  let testimonials = [
+    {
+      name: 'Emily R.',
+      jobTitle: 'Marketing Director',
+      avatar: '/images/image-emily.jpg',
+      body: 'We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.',
+    },
+    {
+      name: 'Thomas S.',
+      jobTitle: 'Chief Operating Officer',
+      avatar: '/images/image-thomas.jpg',
+      body: 'Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.',
+    },
+    {
+      name: 'Jennie F.',
+      jobTitle: 'Business Owner',
+      avatar: '/images/image-jennie.jpg',
+      body: 'Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!',
+    },
+  ];
 </script>
 
 <svelte:head>
@@ -67,6 +89,15 @@
   </ServiceBlock>
 </section>
 
+<section class="testimonials wrapper" aria-labelledby="testimonials-label">
+  <h2 id="testimonials-label">Client testimonials</h2>
+  {#each testimonials as item}
+    <Testimonial avatar={item.avatar} name={item.name} jobTitle={item.jobTitle}>
+      {item.body}
+    </Testimonial>
+  {/each}
+</section>
+
 <style>
   header {
     display: flex;
@@ -91,7 +122,7 @@
   }
 
   .headline {
-    font-family: 'Fraunces 9pt Soft';
+    font-family: 'Fraunces 9pt Soft', serif;
     font-weight: 900;
     text-transform: uppercase;
     font-size: 40px;
@@ -104,5 +135,23 @@
     display: flex;
     justify-content: center;
     margin-top: 52px;
+  }
+
+  .testimonials {
+    padding-block: 64px 86px;
+  }
+
+  .testimonials > :global(*) + :global(*) {
+    margin-top: 64px;
+  }
+
+  #testimonials-label {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Fraunces 9pt Soft', serif;
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: #a7aaad;
   }
 </style>
