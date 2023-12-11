@@ -1,7 +1,11 @@
 <script>
   import '../ui/css/main.css';
   import IconArrowDown from '../ui/icons/icon-arrow-down.svelte';
+  import IconFacebook from '../ui/icons/icon-facebook.svelte';
   import IconHamburger from '../ui/icons/icon-hamburger.svelte';
+  import IconInstagram from '../ui/icons/icon-instagram.svelte';
+  import IconPinterest from '../ui/icons/icon-pinterest.svelte';
+  import IconTwitter from '../ui/icons/icon-twitter.svelte';
   import Logo from '../ui/logo.svelte';
   import ServiceBlock from '../ui/service-block.svelte';
   import Testimonial from '../ui/testimonial.svelte';
@@ -98,6 +102,51 @@
   {/each}
 </section>
 
+<section class="gallery" aria-labelledby="gallery-label">
+  <h2 class="visually-hidden" id="gallery-label">Gallery</h2>
+  <img src="/images/mobile/image-gallery-milkbottles.jpg" alt="" width="376" height="376" />
+  <img src="/images/mobile/image-gallery-orange.jpg" alt="" width="376" height="376" />
+  <img src="/images/mobile/image-gallery-cone.jpg" alt="" width="376" height="376" />
+  <img src="/images/mobile/image-gallery-sugar-cubes.jpg" alt="" width="376" height="376" />
+</section>
+
+<footer>
+  <Logo width={170} />
+  <nav aria-label="Site">
+    <ul role="list" class="nav-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Projects</a></li>
+    </ul>
+  </nav>
+  <ul role="list" class="social-links">
+    <li>
+      <a href="#">
+        <IconFacebook />
+        <span class="visually-hidden">Facebook</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <IconInstagram />
+        <span class="visually-hidden">Instagram</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <IconTwitter />
+        <span class="visually-hidden">Twitter</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <IconPinterest />
+        <span class="visually-hidden">Pinterest</span>
+      </a>
+    </li>
+  </ul>
+</footer>
+
 <style>
   header {
     display: flex;
@@ -153,5 +202,59 @@
     font-size: 1rem;
     letter-spacing: 4px;
     color: #a7aaad;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+    background-color: #90d4c6;
+    color: #2c7566;
+    padding: 64px 80px 39px;
+  }
+
+  footer > :global(*) {
+    margin-inline: auto;
+    display: block;
+  }
+
+  ul {
+    padding-left: 0;
+    margin-block: 0;
+  }
+
+  footer a {
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    color: white;
+  }
+
+  .nav-links {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.13px;
+    display: flex;
+    justify-content: center;
+    gap: 57px;
+    color: #458d7e;
+    margin-top: 40px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    margin-top: 88px;
+  }
+
+  .social-links a {
+    display: flex;
   }
 </style>
