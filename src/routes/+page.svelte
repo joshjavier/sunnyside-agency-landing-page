@@ -3,6 +3,8 @@
   import IconArrowDown from '../ui/icons/icon-arrow-down.svelte';
   import IconHamburger from '../ui/icons/icon-hamburger.svelte';
   import Logo from '../ui/logo.svelte';
+  import ServiceBlock from '../ui/service-block.svelte';
+  import UspBlock from '../ui/usp-block.svelte';
 </script>
 
 <svelte:head>
@@ -23,6 +25,46 @@
     <h2 class="headline">We are creatives</h2>
     <div class="scroll-down"><IconArrowDown width={30} /></div>
   </div>
+</section>
+
+<section aria-labelledby="whatwedo-label">
+  <h2 class="visually-hidden" id="whatwedo-label">What We Do</h2>
+  <UspBlock
+    --accent-color="#FAD400"
+    title="Transform your brand"
+    image="/images/mobile/image-transform.jpg"
+  >
+    We are a full-service creative agency specializing in helping brands grow fast. Engage your
+    clients through compelling visuals that do most of the marketing for you.
+  </UspBlock>
+  <UspBlock
+    --accent-color="#FE7766"
+    title="Stand out to the right audience"
+    image="/images/mobile/image-stand-out.jpg"
+  >
+    Using a collaborative formula of designers, researchers, photographers, videographers, and
+    copywriters, we’ll build and extend your brand in digital places.
+  </UspBlock>
+</section>
+
+<section aria-labelledby="services-label">
+  <h2 class="visually-hidden" id="services-label">Services</h2>
+  <ServiceBlock
+    title="Graphic Design"
+    --text-color="#24554a"
+    --bg-url="url('/images/mobile/image-graphic-design.jpg')"
+  >
+    Great design makes you memorable. We deliver artwork that underscores your brand message and
+    captures potential clients’ attention.
+  </ServiceBlock>
+  <ServiceBlock
+    title="Photography"
+    --text-color="#19536C"
+    --bg-url="url('/images/mobile/image-photography.jpg')"
+  >
+    Increase your credibility by getting the most stunning, high-quality photos that improve your
+    business image.
+  </ServiceBlock>
 </section>
 
 <style>
