@@ -167,6 +167,7 @@
     background-image: url('/images/mobile/image-header.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: bottom center;
     color: white;
   }
 
@@ -175,6 +176,11 @@
     font-weight: 900;
     text-transform: uppercase;
     font-size: 40px;
+    font-size: clamp(
+      2.1875rem,
+      -2.1603rem + 21.7391vw,
+      2.5rem
+    ); /* 40px that compresses to 35px on smaller screens */
     letter-spacing: 6.25px;
     text-align: center;
     padding-top: 144px;
@@ -212,7 +218,7 @@
   footer {
     background-color: #90d4c6;
     color: #2c7566;
-    padding: 64px 80px 39px;
+    padding: 64px 39px 80px;
   }
 
   footer > :global(*) {
@@ -241,7 +247,11 @@
     letter-spacing: -0.13px;
     display: flex;
     justify-content: center;
-    gap: 57px;
+    gap: clamp(
+      1.5rem,
+      -10.5rem + 60vw,
+      3.5625rem
+    ); /* 57px that compresses to 24px on smaller screens */
     color: #458d7e;
     margin-top: 40px;
   }
@@ -254,6 +264,7 @@
     margin-top: 88px;
   }
 
+  .nav-links a,
   .social-links a {
     display: flex;
   }

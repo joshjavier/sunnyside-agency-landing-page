@@ -19,6 +19,7 @@
     background-image: var(--bg-url);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: top center;
     height: 600px; /* temp */
   }
 
