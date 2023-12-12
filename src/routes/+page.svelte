@@ -109,10 +109,10 @@
 
 <section class="gallery" aria-labelledby="gallery-label">
   <h2 class="visually-hidden" id="gallery-label">Gallery</h2>
-  <img src="/images/mobile/image-gallery-milkbottles.jpg" alt="" width="376" height="376" />
-  <img src="/images/mobile/image-gallery-orange.jpg" alt="" width="376" height="376" />
-  <img src="/images/mobile/image-gallery-cone.jpg" alt="" width="376" height="376" />
-  <img src="/images/mobile/image-gallery-sugar-cubes.jpg" alt="" width="376" height="376" />
+  <img srcset="/images/mobile/image-gallery-milkbottles.jpg 376w, /images/desktop/image-gallery-milkbottles.jpg 720w" src="/images/desktop/image-gallery-milkbottles.jpg" alt="" width="720" height="894" />
+  <img srcset="/images/mobile/image-gallery-orange.jpg 376w, /images/desktop/image-gallery-orange.jpg 720w" src="/images/desktop/image-gallery-orange.jpg" alt="" width="720" height="894" />
+  <img srcset="/images/mobile/image-gallery-cone.jpg 376w, /images/desktop/image-gallery-cone.jpg 720w" src="/images/desktop/image-gallery-cone.jpg" alt="" width="720" height="894" />
+  <img srcset="/images/mobile/image-gallery-sugarcubes.jpg 376w, /images/desktop/image-gallery-sugarcubes.jpg 720w" src="/images/desktop/image-gallery-sugarcubes.jpg" alt="" width="720" height="894" />
 </section>
 
 <footer>
@@ -247,7 +247,7 @@
     text-align: center;
     font-family: 'Fraunces 9pt Soft', serif;
     font-weight: 900;
-    font-size: 1rem;
+    font-size: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem); /* 16 -> 20 */
     letter-spacing: 4px;
     color: #a7aaad;
   }
@@ -255,6 +255,21 @@
   .gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery img {
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  @media (min-width: 500px) {
+    .gallery {
+      grid-template-columns: 1fr 1fr 1fr 1fr
+    }
+
+    .gallery img {
+      aspect-ratio: 720 / 894;
+    }
   }
 
   footer {
