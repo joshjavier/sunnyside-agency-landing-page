@@ -1,0 +1,19 @@
+.btn {
+  font-family: 'Fraunces 9pt Soft';
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: -0.11px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  background-color: hsl(var(--bg-color, 0 0% 100%));
+  color: var(--text-color, #24303e);
+  border-radius: 28px;
+}
+
+.btn:hover {
+  background-color: var(--hover-bg-color, hsl(var(--bg-color, 0 0% 100%) / 24.37%));
+  color: var(--hover-text-color, white);
+  transition: all 80ms;
+}

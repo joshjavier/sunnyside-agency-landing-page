@@ -1,8 +1,8 @@
 <script>
   import '../ui/css/main.css';
+  import BurgerMenu from '../ui/burger-menu.svelte';
   import IconArrowDown from '../ui/icons/icon-arrow-down.svelte';
   import IconFacebook from '../ui/icons/icon-facebook.svelte';
-  import IconHamburger from '../ui/icons/icon-hamburger.svelte';
   import IconInstagram from '../ui/icons/icon-instagram.svelte';
   import IconPinterest from '../ui/icons/icon-pinterest.svelte';
   import IconTwitter from '../ui/icons/icon-twitter.svelte';
@@ -43,7 +43,7 @@
 
 <header>
   <Logo />
-  <IconHamburger />
+  <BurgerMenu />
 </header>
 
 <section class="hero">
@@ -150,6 +150,8 @@
 <style>
   header {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     align-items: center;
     justify-content: space-between;
     position: absolute;
@@ -161,8 +163,13 @@
     color: white;
   }
 
+  header > :global(:first-child) {
+    width: clamp(7.75rem, 6.7377rem + 4.3192vw, 10.625rem);
+    flex-shrink: 0;
+  }
+
   .hero {
-    height: 538px; /* temp */
+    height: 100vh;
     background-color: #4abdf2;
     background-image: url('/images/mobile/image-header.jpg');
     background-size: cover;
@@ -184,6 +191,13 @@
     letter-spacing: 6.25px;
     text-align: center;
     padding-top: 144px;
+    padding-top: 26.765vh;
+  }
+
+  @media (min-width: 420px) {
+    .headline {
+      font-size: clamp(2.5rem, 2.0882rem + 1.5686vw, 3.5rem);
+    }
   }
 
   .scroll-down {

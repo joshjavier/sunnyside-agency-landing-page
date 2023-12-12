@@ -3,6 +3,9 @@
 @import 'globals/fonts.css';
 @import 'globals/global.css';
 
+/* Blocks */
+@import 'blocks/button.css';
+
 /* Utilities */
 @import 'utilities/wrapper.css';
 @import 'utilities/visually-hidden.css';
