@@ -59,6 +59,7 @@
     --accent-color="#FAD400"
     title="Transform your brand"
     image="/images/mobile/image-transform.jpg"
+    reverse={true}
   >
     We are a full-service creative agency specializing in helping brands grow fast. Engage your
     clients through compelling visuals that do most of the marketing for you.
@@ -161,6 +162,7 @@
     translate: -50%;
     margin-top: 32px;
     color: white;
+    max-width: 1352px;
   }
 
   header > :global(:first-child) {
@@ -176,6 +178,16 @@
     background-repeat: no-repeat;
     background-position: bottom center;
     color: white;
+  }
+
+  @media (min-width: 751px) {
+    header {
+      margin-top: 34px;
+    }
+
+    .hero {
+      background-image: url('/images/desktop/image-header.jpg');
+    }
   }
 
   .headline {
