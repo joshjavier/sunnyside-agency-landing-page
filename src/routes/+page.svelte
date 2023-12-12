@@ -74,12 +74,12 @@
   </UspBlock>
 </section>
 
-<section aria-labelledby="services-label">
+<section class="services" aria-labelledby="services-label">
   <h2 class="visually-hidden" id="services-label">Services</h2>
   <ServiceBlock
     title="Graphic Design"
     --text-color="#24554a"
-    --bg-url="url('/images/mobile/image-graphic-design.jpg')"
+    --bg-url="url('/images/desktop/image-graphic-design.jpg')"
   >
     Great design makes you memorable. We deliver artwork that underscores your brand message and
     captures potential clients’ attention.
@@ -87,7 +87,7 @@
   <ServiceBlock
     title="Photography"
     --text-color="#19536C"
-    --bg-url="url('/images/mobile/image-photography.jpg')"
+    --bg-url="url('/images/desktop/image-photography.jpg')"
   >
     Increase your credibility by getting the most stunning, high-quality photos that improve your
     business image.
@@ -96,11 +96,15 @@
 
 <section class="testimonials wrapper" aria-labelledby="testimonials-label">
   <h2 id="testimonials-label">Client testimonials</h2>
-  {#each testimonials as item}
-    <Testimonial avatar={item.avatar} name={item.name} jobTitle={item.jobTitle}>
-      {item.body}
-    </Testimonial>
-  {/each}
+  <ul class="switcher" role="list">
+    {#each testimonials as item}
+      <li>
+        <Testimonial avatar={item.avatar} name={item.name} jobTitle={item.jobTitle}>
+          {item.body}
+        </Testimonial>
+      </li>
+    {/each}
+  </ul>
 </section>
 
 <section class="gallery" aria-labelledby="gallery-label">
@@ -218,11 +222,23 @@
     margin-top: 52px;
   }
 
-  .testimonials {
-    padding-block: 64px 86px;
+  @media (min-width: 700px) {
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
-  .testimonials > :global(*) + :global(*) {
+  .testimonials {
+    padding-top: clamp(4rem, 1.8873rem + 9.0141vw, 10rem); /* 64 -> 160 */
+    padding-bottom: clamp(5.375rem, 3.7465rem + 6.9484vw, 10rem); /* 86 -> 160 */
+    --wrapper-max-width: 1110px;
+    --threshold: 800px;
+    --v-gutter: 30px;
+    --h-gutter: 64px;
+  }
+
+  .testimonials ul {
     margin-top: 64px;
   }
 

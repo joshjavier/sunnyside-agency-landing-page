@@ -18,6 +18,8 @@
     text-align: center;
     font-family: 'Barlow', sans-serif;
     font-weight: 600;
+    max-width: 48ch;
+    margin-inline: auto;
   }
 
   article > * + * {
@@ -35,6 +37,11 @@
     line-height: 32px;
     letter-spacing: -0.13px;
     color: #5b636d;
+    margin-top: clamp(2rem, -0.0313rem + 4.0625vw, 3.625rem);
+  }
+
+  article .byline {
+    margin-top: clamp(2rem, -0.8906rem + 5.7813vw, 4.3125rem);
   }
 
   article .byline .name {

@@ -1,0 +1,11 @@
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--h-gutter, var(--gutter));
+  column-gap: var(--v-gutter, var(--gutter));
+}
+
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--threshold) - 100%) * 999);
+}
