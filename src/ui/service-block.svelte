@@ -4,7 +4,7 @@
 
 <div class="service">
   <div class="wrapper">
-    <h2 class="title">{title}</h2>
+    <h3 class="title">{title}</h3>
     <p class="description">
       <slot />
     </p>
@@ -24,7 +24,7 @@
   }
 
   .service .title {
-    font-family: 'Fraunces 9pt Soft';
+    font-family: 'Fraunces 9pt Soft', serif;
     font-weight: 900;
     font-size: 28px;
     letter-spacing: -0.2px;
@@ -32,7 +32,7 @@
   }
 
   .service .description {
-    font-family: 'Barlow';
+    font-family: 'Barlow', sans-serif;
     font-weight: 600;
     font-size: 1rem;
     line-height: 27px;

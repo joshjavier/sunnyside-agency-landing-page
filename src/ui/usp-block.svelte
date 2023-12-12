@@ -8,7 +8,7 @@
 <div class="usp">
   <img src={image} alt="" />
   <div class="content wrapper">
-    <h2 class="title">{title}</h2>
+    <h3 class="title">{title}</h3>
     <p class="description">
       <slot />
     </p>
@@ -24,7 +24,7 @@
 
   .usp .title,
   .usp .cta {
-    font-family: 'Fraunces 9pt Soft';
+    font-family: 'Fraunces 9pt Soft', serif;
     font-weight: 900;
     color: #24303e;
   }
@@ -35,7 +35,7 @@
   }
 
   .usp .description {
-    font-family: 'Barlow';
+    font-family: 'Barlow', sans-serif;
     font-weight: 600;
     font-size: 18px;
     line-height: 30px;
